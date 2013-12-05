@@ -9,16 +9,18 @@ For the walkthrough on how this software works, visit: http://www.alchemyapi.com
 #### Related Links ####
 
 For more information on AlchemyAPI's sentiment analysis API: http://www.alchemyapi.com/products/features/sentiment-analysis/
+
 For more information on AlchemyAPI's entity extraction API: http://www.alchemyapi.com/products/features/entity-extraction/
+
 
 To try out all of AlchemyAPI's text analysis functions in an interactive web demo: http://www.alchemyapi.com/products/demo/
 
 
 ## Requirements ##
 
-1 - An API key from AlchemyAPI (register for one at: http://www.alchemyapi.com/api/register.html)
-2 - Credentials from Twitter - the Consumer Key and Consumer Secret (create a new application at: https://dev.twitter.com/apps)
-3 - Python 2.7 (other versions of Python 2.x may work, Python 3.x will not)
+- An API key from AlchemyAPI (register for one at: http://www.alchemyapi.com/api/register.html)
+- Credentials from Twitter - the Consumer Key and Consumer Secret (create a new application at: https://dev.twitter.com/apps)
+- Python 2.7 (other versions of Python 2.x may work, Python 3.x will not)
 
 
 ## How to Configure ##

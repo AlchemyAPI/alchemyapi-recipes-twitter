@@ -48,7 +48,9 @@ Once you have everything configured, in your command window simply:
 
 	python analyze.py "SEARCH_STRING" COUNT
 
-where SEARCH_STRING is what to search Twitter for, and COUNT is the number of Tweets to attempt to gather. 
+where SEARCH_STRING is what to search Twitter for, and COUNT is the number of Tweets to attempt to gather. For example, try:
+
+	python analyze.py "Denver Broncos" 150
 
 
 ## A Note About Security ##

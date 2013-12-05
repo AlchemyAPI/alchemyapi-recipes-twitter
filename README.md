@@ -39,7 +39,7 @@ To configure your Twitter credentials, create a new file called 'config.py' and 
 	consumer_key = 'TWITTER_API_CONSUMER_KEY'
 	consumer_secret = 'TWITTER_API_CONSUMER_SECRET'
 
-where TWITTER_API_CONSUMER_KEY and TWITTER_API_CONSUMER_SECRET are the values obtained from https://dev.twitter.com/apps)
+where TWITTER_API_CONSUMER_KEY and TWITTER_API_CONSUMER_SECRET are the values obtained from https://dev.twitter.com/apps
 
 
 ## How to Run ##

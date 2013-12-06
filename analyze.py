@@ -434,7 +434,6 @@ if not len(sys.argv) == 3:
 	print "Invalid number of input arguments. Please run 'python analyze.py \"QUERY_STRING\" COUNT'"
 	print "Where QUERY_STRING is what to search for (i.e. 'Denver Broncos')"
 	print "And COUNT is the number of Tweets to attempt to gather\n"
-	print len(sys.argv)
 	sys.exit()
 
 #run the script

@@ -28,7 +28,7 @@ except ImportError:
 	print '\nError finding Twitter credentials in config.py, please add them'
 	f = open('config.py','w+')
 	f.write("consumer_key='TWITTER_API_CONSUMER_KEY'\n")
-	f.write("consumer_secret='TWITTER_API_SECRET_KEY'\n")
+	f.write("consumer_secret='TWITTER_API_CONSUMER_SECRET'\n")
 	f.close()
 	sys.exit()
 

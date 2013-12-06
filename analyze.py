@@ -200,7 +200,7 @@ def process(query, in_queue, out_queue):
 							tweet['sentiment']['entity']['score'] = 0  
 						
 						#Only 1 entity can possibly match the query, so exit the loop
-						break;
+						break
 
 			#calculate the sentiment for the entire tweet
 			response = alchemyapi.sentiment('text',tweet['text'])
@@ -293,7 +293,7 @@ def analyze(tweets, query):
 
 		if not check:
 			#All threads have died, so quit
-			break;
+			break
 		
 	print 'Done analyzing!'
 

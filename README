@@ -1,0 +1,79 @@
+Welcome to the AlchemyAPI Twitter analysis recipe!
+
+STEP 1: Gather and enrich the data
+
+To run this tool, simply call with a search term and an integer reflecting
+the number of Tweets to analyze:
+
+$> python recipe.py <SEARCH_TERM> <NUM_TWEETS>
+
+-) Credentials:
+    You must have API credentials for both Twitter and AlchemyAPI to successfully
+    run this tool. Edit the file credentials.py before executing recipe.py to 
+    prevent any errors. Inside the file credentials.py, there are three
+    parameters:
+        $> cat credentials.py
+        twitter_consumer_key='YOUR_TWITTER_CONSUMER_KEY' 
+        twitter_consumer_secret='YOUR_TWITTER_CONSUMER_SECRET'
+        alchemy_apikey='YOUR_ALCHEMY_API_KEY'
+        $>
+    Replace each of these with your respective values to run the analysis smoothly.
+
+
+-) Dependencies:
+    pymongo Python module: install with 'easy_install'
+        $> easy_install pymongo
+    mongodb: install with apt-get (Ubuntu) or check here: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+        $> sudo apt-get install mongodb-org
+
+STEP 2: Visualize the data
+
+With your MongoDB instance created, you now have access to well-tabulated results! We can proceed
+with some Python and R scripts to write results to disk & visualize them.
+
+-) Write your data:
+    Here, we will write two types of files: one containing the raw scores of sentiment for each Tweet, and
+    one containing timestamps for each Tweet. We will do this separately for positive and negative Tweets.
+    To write these files, just call:
+
+    $> python write.py
+
+    This will result in a total of 4 text files being written: scores.pos, scores.neg, times.pos, and times.neg
+
+    -) Dependencies
+        This tool requires the pymongo Python module (see above), as well as the datetime module.
+        $> easy_install datetime
+
+-) Visualize your data
+    Here, we want to make some plots showing the data we wrote out in the previous steps. 
+    To do this, simply invoke the included R script as follows:
+    $> R < plot.R --vanilla
+    
+    This tool will write 3 image files to disk: 
+        twitter_sentiment_raw.png    -- a histogram showing the positive and negative Tweet scores
+        twitter_sentiment_kernel.png -- a kernel density function corresponding to the above histograms
+        twitter_sentiment_volume.png -- a plot showing Tweet volume (separated by sentiment) as a function
+                                        of the hour in a day
+
+    -) Dependencies
+        You must have R installed on your system to run this tool. See http://www.r-project.org/
+        You must also install the 'ggplot2' library for R. See http://www.r-bloggers.com/installing-r-packages/
+
+STEP 3: (OPTIONAL) Delete your data
+
+From time to time, it's good to empty out your cache! If you want to wipe
+the twitter_db instance in MongoDB that was created in STEP 1, run the following command:
+
+$> python delete.py
+
+
+NOTE FOR UBUNTU USERS
+Here is a simple set of commands that will ensure you have all the necessary
+tools and modules needed to successfully run this recipe:
+
+$> sudo easy_install pymongo datetime
+$> sudo apt-get update
+$> sudo apt-get install r-base-dev
+$> sudo R
+R> install.packages("ggplot2")
+R> <Ctrl-D>

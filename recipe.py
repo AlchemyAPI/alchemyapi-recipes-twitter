@@ -184,9 +184,9 @@ def enrich(credentials, tweets, sentiment_target = ''):
     pool = Pool(processes = 10)
     mgr = Manager()
     result_queue = mgr.Queue()
-    # Send each Tweet to the get_targeted_sentiment function
+    # Send each Tweet to the get_text_sentiment function
     for tweet in tweets:
-        pool.apply_async(get_targeted_sentiment, (apikey, tweet, sentiment_target, result_queue))
+        pool.apply_async(get_text_sentiment, (apikey, tweet, sentiment_target, result_queue))
 
     pool.close()
     pool.join()
@@ -197,7 +197,7 @@ def enrich(credentials, tweets, sentiment_target = ''):
     print "Enrichment complete! Enriched %d Tweets" % len(collection)
     return collection
 
-def get_targeted_sentiment(apikey, tweet, target, output):
+def get_text_sentiment(apikey, tweet, target, output):
 
     # Base AlchemyAPI URL for targeted sentiment call
     alchemy_url = "http://access.alchemyapi.com/calls/text/TextGetTextSentiment"
